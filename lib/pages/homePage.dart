@@ -76,6 +76,8 @@ class _HomePageState extends State<HomePage> {
     );
   }
 
+  void checkHabitOnOff(bool? value){}
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -124,7 +126,10 @@ class _HomePageState extends State<HomePage> {
         final habit = currentHabits[index];
         bool isCompletedToday = isHabitCompletedToday(habit.completedDays);
 
-        return MyHabitTile(text: habit.name, isCompleted: isCompletedToday);
+        return MyHabitTile(
+          text: habit.name,
+          isCompleted: isCompletedToday,
+          onChanged: (value) => checkHabitOnOff(value));
         // return ListTile(
         // title: Text(habit.name),
         // );
