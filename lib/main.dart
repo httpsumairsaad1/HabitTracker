@@ -6,8 +6,13 @@ import 'pages/homePage.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
+  try {
   await HabitDatabase.initialize();
-  await HabitDatabase().saveFirstLaunchDate();
+  await HabitDatabase().saveFirstLaunchDate(); 
+  } catch (e) {
+  // Handle the error, e.g., print an error message or show a dialog
+    print('Error initializing database: $e');
+  }
 
   runApp(
     MultiProvider(
