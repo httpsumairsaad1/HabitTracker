@@ -17,6 +17,9 @@ class MyHabitTile extends StatelessWidget {
             ? Colors.green
             : Theme.of(context).colorScheme.secondary,
       ),
+      child: ListTile(
+        title: Text(text),
+      ),
     );
   }
 }

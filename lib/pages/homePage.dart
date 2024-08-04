@@ -109,7 +109,7 @@ class _HomePageState extends State<HomePage> {
       body: _buildHabitList(),
     );
   }
-
+ 
   Widget _buildHabitList() {
     // habit db
     final habitDatabase = context.watch<HabitDatabase>();
@@ -125,6 +125,9 @@ class _HomePageState extends State<HomePage> {
         bool isCompletedToday = isHabitCompletedToday(habit.completedDays);
 
         return MyHabitTile(text: habit.name, isCompleted: isCompletedToday);
+        // return ListTile(
+        // title: Text(habit.name),
+        // );
       },
     );
   }
